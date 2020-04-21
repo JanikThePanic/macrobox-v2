@@ -9,3 +9,6 @@ Parts needed include:
 * x4 [2-56 Machine Screws 1/4 in](https://www.homedepot.com/p/2-56-x-1-4-in-Grade-18-8-Stainless-Steel-Phillips-Drive-Flat-Head-Machine-Screws-25-Pack-9000225/311095322)
 * x10 [Cherry MX Blue Keyswitch - PCB Mount](https://www.mouser.ca/ProductDetail/540-MX1A-E1NN)
 * x14 [White Flangeless 3mm LEDs](https://www.mouser.ca/ProductDetail/593-VAOL-3MWY4)
+
+## Support Me
+Support me at [paypal.me/thejanik](https://www.paypal.me/thejanik)
