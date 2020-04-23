@@ -9,6 +9,7 @@
 
 #include <Keyboard.h>
 #include <Mouse.h>
+#include "leds.h"
 
 // Vars used for mode selection
 int mode = 1;
@@ -20,13 +21,6 @@ int key = 0;
 // Vars for key pins
 const int m1 = 2;
 const int m2 = 3;
-
-// Vars for LEDs
-const int tl = A0;
-const int tr = A1;
-const int bl = A2;
-const int br = A3;
-
 
 // No key set text
 void nks(){
@@ -206,109 +200,6 @@ void whichMode() {
 }
 
 
-// LEDs for each mode
-void led_mode() {
-  switch (mode) {
-    case 1:
-      digitalWrite(tl, HIGH);
-      digitalWrite(tr, LOW);
-      digitalWrite(bl, LOW);
-      digitalWrite(br, LOW);
-      break;
-    case 2:
-      digitalWrite(tl, LOW);
-      digitalWrite(tr, HIGH);
-      digitalWrite(bl, LOW);
-      digitalWrite(br, LOW);
-      break;
-    case 3:
-      digitalWrite(tl, HIGH);
-      digitalWrite(tr, HIGH);
-      digitalWrite(bl, LOW);
-      digitalWrite(br, LOW);
-      break;
-    case 4:
-      digitalWrite(tl, LOW);
-      digitalWrite(tr, LOW);
-      digitalWrite(bl, HIGH);
-      digitalWrite(br, LOW);
-      break;
-    case 5:
-      digitalWrite(tl, HIGH);
-      digitalWrite(tr, LOW);
-      digitalWrite(bl, HIGH);
-      digitalWrite(br, LOW);
-      break;
-    case 6:
-      digitalWrite(tl, LOW);
-      digitalWrite(tr, HIGH);
-      digitalWrite(bl, HIGH);
-      digitalWrite(br, LOW);
-      break;
-    case 7:
-      digitalWrite(tl, HIGH);
-      digitalWrite(tr, HIGH);
-      digitalWrite(bl, HIGH);
-      digitalWrite(br, LOW);
-      break;
-    case 8:
-      digitalWrite(tl, LOW);
-      digitalWrite(tr, LOW);
-      digitalWrite(bl, LOW);
-      digitalWrite(br, HIGH);
-      break;
-    case 9:
-      digitalWrite(tl, HIGH);
-      digitalWrite(tr, LOW);
-      digitalWrite(bl, LOW);
-      digitalWrite(br, HIGH);
-      break;
-    case 10:
-      digitalWrite(tl, LOW);
-      digitalWrite(tr, HIGH);
-      digitalWrite(bl, LOW);
-      digitalWrite(br, HIGH);
-      break;
-    case 11:
-      digitalWrite(tl, HIGH);
-      digitalWrite(tr, HIGH);
-      digitalWrite(bl, LOW);
-      digitalWrite(br, HIGH);
-      break;
-    case 12:
-      digitalWrite(tl, LOW);
-      digitalWrite(tr, LOW);
-      digitalWrite(bl, HIGH);
-      digitalWrite(br, HIGH);
-      break;
-    case 13:
-      digitalWrite(tl, HIGH);
-      digitalWrite(tr, LOW);
-      digitalWrite(bl, HIGH);
-      digitalWrite(br, HIGH);
-      break;
-    case 14:
-      digitalWrite(tl, LOW);
-      digitalWrite(tr, HIGH);
-      digitalWrite(bl, HIGH);
-      digitalWrite(br, HIGH);
-      break;
-    case 15:
-      digitalWrite(tl, HIGH);
-      digitalWrite(tr, HIGH);
-      digitalWrite(bl, HIGH);
-      digitalWrite(br, HIGH);
-      break;
-    case 16:
-      digitalWrite(tl, LOW);
-      digitalWrite(tr, LOW);
-      digitalWrite(bl, LOW);
-      digitalWrite(br, LOW);
-      break;
-  }
-}
-
-
 // Switch Modes
 void switchMode(int val) {
   mode += val;
@@ -318,7 +209,7 @@ void switchMode(int val) {
   if (mode > max_mode){
     mode = 1;
   }
-  led_mode();
+  led_mode(mode);
 }
 
 // Setup
@@ -348,7 +239,7 @@ void setup() {
 
   // Mode starts 1
   mode = 1;
-  led_mode();
+  led_mode(mode);
 }
 
 
@@ -368,37 +259,11 @@ void loop() {
   }
   
   //Key time
-  if (digitalRead(4) == LOW){
-    key = 1;
-    whichMode();
-  }
-  if (digitalRead(5) == LOW){
-    key = 2;
-    whichMode();
-  }
-  if (digitalRead(6) == LOW){
-    key = 3;
-    whichMode();
-  }
-  if (digitalRead(7) == LOW){
-    key = 4;
-    whichMode();
-  }
-  if (digitalRead(8) == LOW){
-    key = 5;
-    whichMode();
-  }
-  if (digitalRead(9) == LOW){
-    key = 6;
-    whichMode();
-  }
-  if (digitalRead(10) == LOW){
-    key = 7;
-    whichMode();
-  }
-  if (digitalRead(11) == LOW){
-    key = 8;
-    whichMode();
+  for (int i = 4; i < 12; i++) {
+    if (digitalRead(i) == LOW) {
+      key = i-3;
+      whichMode();
+    }
   }
 
   //  Delay so one press is not seen as 1000 little presses, y'know
