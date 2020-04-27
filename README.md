@@ -16,9 +16,6 @@ Parts needed include:
 
 [Mouser Order](https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=3fa381ebfa)
 
-## Support Me
-Support me at [paypal.me/thejanik](https://www.paypal.me/thejanik)
-
 ## 3D Print
 Parts to 3D Print:
 * x1 MBv2_Bottom_Lid.SLDPRT
@@ -30,3 +27,7 @@ The CAD is made in SolidWorks. If you need STLs, feel free to contact me.
 
 ## Code
 The code was written in Arduino because I got lazy.
+The Arduino [Keyboard](https://www.arduino.cc/reference/en/language/functions/usb/keyboard/) Libaray was used.
+
+## Support Me
+Support me at [paypal.me/thejanik](https://www.paypal.me/thejanik)
