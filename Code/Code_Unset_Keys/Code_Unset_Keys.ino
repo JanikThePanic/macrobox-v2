@@ -9,6 +9,7 @@
 
 #include <Keyboard.h>
 #include <Mouse.h>
+#include <HID.h>
 #include "leds.h"
 
 // Vars used for mode selection
@@ -235,6 +236,7 @@ void setup() {
   // Initialize control over the keyboard and mouse
   Mouse.begin();
   Keyboard.begin();
+  Consumer.begin();
   Serial. begin(9600);
 
   // Mode starts 1
