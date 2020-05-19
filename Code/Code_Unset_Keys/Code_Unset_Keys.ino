@@ -7,9 +7,8 @@
 // For the love of god, help save yourself and don't use this.
 // Or do, I'm not going to tell you how to live your life.
 
-#include <Keyboard.h>
-#include <Mouse.h>
-#include <HID.h>
+#include <HID-Project.h>
+#include <HID-Settings.h>
 #include "leds.h"
 
 // Vars used for mode selection
@@ -35,6 +34,18 @@ void nks(){
 // Different Modes
 void mode_1() {
   switch(key) {
+    case 1:
+      Keyboard.write('A');
+      //This is an example of writing
+      break;
+
+     case 2:
+      Consumer.write(MEDIA_PLAY_PAUSE);
+      //This is an example of pausing your music
+      break;
+
+      //More examples at https://github.com/NicoHood/HID/tree/2.6.1/examples
+    
     default:
      nks();
      break;
