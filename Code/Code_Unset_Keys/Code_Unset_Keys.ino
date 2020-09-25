@@ -209,6 +209,10 @@ void whichMode() {
       mode_16();
       break;
   }
+    
+    //  Delay so one press is not seen as 1000 little presses, y'know
+    delay(200);
+    
 }
 
 
@@ -263,12 +267,18 @@ void loop() {
     Serial.print("Mode: ");
     Serial.print(mode);
     Serial.println();
+    
+    //  Delay so one press is not seen as 1000 little presses, y'know
+    delay(200);
   }
   if (digitalRead(m2) == LOW){
     switchMode(-1);
     Serial.print("Mode: ");
     Serial.print(mode);
     Serial.println();
+    
+    //  Delay so one press is not seen as 1000 little presses, y'know
+    delay(200);
   }
   
   //Key time
@@ -279,6 +289,4 @@ void loop() {
     }
   }
 
-  //  Delay so one press is not seen as 1000 little presses, y'know
-  delay(200);
 }
