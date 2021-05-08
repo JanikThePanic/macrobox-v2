@@ -3,8 +3,8 @@ Made by [Jahangir (Janik) Abdullayev](https://janikthepanic.github.io/)
 <br>
 More [Documentation](https://janikthepanic.github.io/projects/macrobox_v2.html)
 
-## PCB
-PCB found on [EasyEDA](https://easyeda.com/jk4abdl/MarcoBox-v2)
+## Circuit
+Circuit available on [EasyEDA](https://easyeda.com/jk4abdl/MarcoBox-v2)
 
 ## Parts List
 Parts needed include:
